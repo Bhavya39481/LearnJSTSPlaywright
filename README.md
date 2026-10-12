@@ -3,6 +3,8 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-yellow)
 ![Node.js](https://img.shields.io/badge/Node.js-18%2B-green)
 ![Prompt Engineering](https://img.shields.io/badge/Prompt_Eng-RICE--POT-purple)
+![Increment and Decrement](https://img.shields.io/badge/JS-Increment_%26_Decrement-f7df1e?logo=javascript&logoColor=black)
+![Nullish Coalescing](https://img.shields.io/badge/JS-Nullish_Coalescing-f7df1e?logo=javascript&logoColor=black)
 
 A chapter-by-chapter learning repo for testers moving into JavaScript, TypeScript, and Playwright automation. Every chapter is a folder, every lesson is a small file you can run on its own.
 
@@ -39,6 +41,7 @@ A chapter-by-chapter learning repo for testers moving into JavaScript, TypeScrip
   - [22: Comparison Operators (Loose vs Strict)](#22-comparison-operators-loose-vs-strict)
   - [23: Logical Operators](#23-logical-operators)
   - [24: Confusing Comparisons](#24-confusing-comparisons)
+- [Chapter 05: Increment, Decrement and Nullish Coalescing](#chapter-05-increment-decrement-and-nullish-coalescing)
 - [Coming Up](#coming-up)
 
 ---
@@ -50,8 +53,9 @@ flowchart LR
     C0["00 Prompt Engineering<br/>RICE-POT"]:::done --> C1["01 JS Basics<br/>Hello World, Math"]:::done
     C1 --> C2["02 Keywords and Identifiers<br/>var/let/const, naming, comments"]:::done
     C2 --> C3["03 Literals<br/>null, undefined, numbers, BigInt"]:::done
-    C3 --> C4["04 Operators<br/>arithmetic, comparison, logical"]:::progress
-    C4 --> TS["TypeScript"]:::planned
+    C3 --> C4["04 Operators<br/>comparison, strings, ternary"]:::progress
+    C4 --> C5["05 Increment, Decrement<br/>and Nullish Coalescing"]:::progress
+    C5 --> TS["TypeScript"]:::planned
     TS --> PW["Playwright"]:::planned
 
     classDef done fill:#d1fae5,stroke:#059669,color:#064e3b
@@ -69,7 +73,8 @@ flowchart LR
 | 01 | JavaScript Basics | [01_chapter_JS_Basics](01_chapter_JS_Basics/) | ✅ Done | Running a file with Node, `console.log`, arithmetic expressions |
 | 02 | Keywords and Identifiers | [02_chapter_JS_Keywrods_Identifiers](02_chapter_JS_Keywrods_Identifiers/) | ✅ Done | How V8 runs code, `var`/`let`/`const`, identifier rules, naming conventions, comments |
 | 03 | Literals | [03_chapter_JS_Literals](03_chapter_JS_Literals/) | ✅ Done | `typeof`, `null` vs `undefined`, number bases, exponents, numeric separators, BigInt, `Infinity`, `NaN` |
-| 04 | Operators | [04_chapter_JS_Operators](04_chapter_JS_Operators/) | 🟡 In progress | Data types, assignment, arithmetic, `==` vs `===`, `&&` `\|\|` `!`, coercion traps |
+| 04 | Operators | [04_chapter_JS_Operators](04_chapter_JS_Operators/) | 🟡 In progress | Data types, assignment, arithmetic, comparisons, logical and ternary operators, strings, `typeof` |
+| 05 | Increment, Decrement and Nullish Coalescing | [05_chapter_JS_Inc_Dec_Operators](05_chapter_JS_Inc_Dec_Operators/) | 🟡 In progress | Prefix and postfix `++`/`--`, expression evaluation, `??` defaults |
 
 ---
 
@@ -107,14 +112,22 @@ LearnJSTSPlaywright4x/
 │   ├── 16_Numbers_PART2.js                 # Numeric separators (1_000_000) and BigInt
 │   ├── 17_Special.js                       # Infinity, -Infinity, NaN
 │   └── 18_undefined.js                     # Practice: undefined vs null
-└── 04_chapter_JS_Operators/
-    ├── 19_Arch.js                          # Anatomy of an expression, JS data types
-    ├── 20_Assigment_Op.js                  # = and reassigning a variable
-    ├── 21_Arithematic_Op.js                # + - * / % ** and the odd/even check
-    ├── 22_Comparsion_Op.js                 # == vs ===, != vs !==
-    ├── 23_Logical_Op.js                    # && || !
-    ├── 24_Confusing_Comparsion.js          # "" == 0, "0" == 0, "" == "0"
-    └── 25_CC.js                            # (empty, work in progress)
+├── 04_chapter_JS_Operators/
+│   ├── 19_Operator.js                      # Expressions and JavaScript data types
+│   ├── 20_Assignment_Op.js                 # Assignment and compound assignment
+│   ├── 21_Arithemetic_OP.js                # Arithmetic, remainder and exponentiation
+│   ├── 22_Comarision_Op.js                 # Loose and strict comparisons
+│   ├── 23_Logical_OP.js                    # &&, || and !
+│   ├── 24_Confusing_Comparator_1.js         # JavaScript comparison coercion
+│   ├── 25_Confusing_Comparator_2.js         # var vs let block scope
+│   ├── 26_IQ1.js – 27_String.js             # Comparison exercise and strings
+│   ├── 28_Ternary.js – 36.IQ.js             # Ternary operator examples and exercises
+│   └── 37.typeof.js                        # typeof practice
+└── 05_chapter_JS_Inc_Dec_Operators/
+    ├── 38_ID.js – 39_ID_Op.js               # Prefix and postfix increment
+    ├── 40_IQ.js – 43_IQ4.js                 # Increment expression exercises
+    ├── 44_Pre_De.js – 45_Post_De.js          # Prefix and postfix decrement
+    └── 46_Nullish_Op.js                     # Nullish coalescing defaults
 ```
 
 ---
@@ -124,8 +137,8 @@ LearnJSTSPlaywright4x/
 You only need [Node.js](https://nodejs.org/) 18 or newer. No `npm install` yet.
 
 ```bash
-git clone https://github.com/PramodDutta/LearnJSTSPlaywright4x.git
-cd LearnJSTSPlaywright4x
+git clone https://github.com/Bhavya39481/LearnJSTSPlaywright.git
+cd LearnJSTSPlaywright
 node --version                              # v18+ (tested on v22)
 node 01_chapter_JS_Basics/01_HelloWorld.js  # Hello World!
 ```
@@ -970,7 +983,61 @@ console.log("" === "0"); // false
 
 ---
 
+The remaining lessons in [04_chapter_JS_Operators](04_chapter_JS_Operators/) cover block scope, comparison practice, strings, the ternary operator and `typeof`.
+
+## Chapter 05: Increment, Decrement and Nullish Coalescing
+
+![JavaScript increment, decrement and nullish coalescing lessons](https://img.shields.io/badge/Chapter_05-Operators-f7df1e?logo=javascript&logoColor=black)
+
+### Prefix and Postfix Operators
+
+**Concept:** Prefix `++i` and `--i` change the value before the expression uses it. Postfix `i++` and `i--` use the current value first, then change it.
+
+```mermaid
+flowchart LR
+    I["i = 1"] --> P["i++ returns 1<br/>then i becomes 2"]
+    I --> Q["++i changes i to 2<br/>then returns 2"]
+```
+
+```js
+// 05_chapter_JS_Inc_Dec_Operators/43_IQ4.js
+let i = 1;
+let result = i++ + ++i;
+console.log(result); // 4
+console.log(i);      // 3
+```
+
+The expression is evaluated left to right: `i++` contributes `1` and then increments `i` to `2`; `++i` increments it to `3` and contributes `3`. Therefore, `result` is `1 + 3`, or `4`.
+
+### Nullish Coalescing
+
+**Concept:** `value ?? fallback` uses the fallback only when `value` is `null` or `undefined`. Values such as `0`, `false` and `""` are kept.
+
+```mermaid
+flowchart TD
+    V["value ?? fallback"] --> Q{"value is null<br/>or undefined?"}
+    Q -->|Yes| F["Use fallback"]
+    Q -->|No| K["Keep value"]
+```
+
+```js
+// 05_chapter_JS_Inc_Dec_Operators/46_Nullish_Op.js
+let apiResponse = null;
+let responseData = apiResponse ?? "{}";
+console.log(responseData); // "{}"
+
+let user = "Bhavya";
+let data = user ?? "{}";
+console.log(data);          // Bhavya
+
+console.log(0 ?? 5);        // 0, not the fallback
+```
+
+Unlike `||`, `??` does not replace valid falsy values such as `0`, `false` or an empty string.
+
+---
+
 ## Coming Up
 
-- **Chapter 04: Operators** continues: `25_CC.js` is still empty.
+- **Chapter 04: Operators** and **Chapter 05: Increment, Decrement and Nullish Coalescing** are in progress.
 - Then TypeScript, then Playwright.
