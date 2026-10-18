@@ -42,6 +42,12 @@ A chapter-by-chapter learning repo for testers moving into JavaScript, TypeScrip
   - [23: Logical Operators](#23-logical-operators)
   - [24: Confusing Comparisons](#24-confusing-comparisons)
 - [Chapter 05: Increment, Decrement and Nullish Coalescing](#chapter-05-increment-decrement-and-nullish-coalescing)
+- [Chapter 06: Conditional Statements](#chapter-06-conditional-statements)
+- [Chapter 07: Switch Statements](#chapter-07-switch-statements)
+- [Chapter 08: User Input](#chapter-08-user-input)
+- [Chapter 09: For Loops](#chapter-09-for-loops)
+- [Chapter 10: While Loops](#chapter-10-while-loops)
+- [Chapter 11: Do...While Loops](#chapter-11-dowhile-loops)
 - [Coming Up](#coming-up)
 
 ---
@@ -55,7 +61,13 @@ flowchart LR
     C2 --> C3["03 Literals<br/>null, undefined, numbers, BigInt"]:::done
     C3 --> C4["04 Operators<br/>comparison, strings, ternary"]:::progress
     C4 --> C5["05 Increment, Decrement<br/>and Nullish Coalescing"]:::progress
-    C5 --> TS["TypeScript"]:::planned
+    C5 --> C6["06 Conditionals"]:::progress
+    C6 --> C7["07 Switch"]:::progress
+    C7 --> C8["08 User Input"]:::progress
+    C8 --> C9["09 For Loops"]:::progress
+    C9 --> C10["10 While Loops"]:::progress
+    C10 --> C11["11 Do...While Loops"]:::progress
+    C11 --> TS["TypeScript"]:::planned
     TS --> PW["Playwright"]:::planned
 
     classDef done fill:#d1fae5,stroke:#059669,color:#064e3b
@@ -75,6 +87,12 @@ flowchart LR
 | 03 | Literals | [03_chapter_JS_Literals](03_chapter_JS_Literals/) | ✅ Done | `typeof`, `null` vs `undefined`, number bases, exponents, numeric separators, BigInt, `Infinity`, `NaN` |
 | 04 | Operators | [04_chapter_JS_Operators](04_chapter_JS_Operators/) | 🟡 In progress | Data types, assignment, arithmetic, comparisons, logical and ternary operators, strings, `typeof` |
 | 05 | Increment, Decrement and Nullish Coalescing | [05_chapter_JS_Inc_Dec_Operators](05_chapter_JS_Inc_Dec_Operators/) | 🟡 In progress | Prefix and postfix `++`/`--`, expression evaluation, `??` defaults |
+| 06 | Conditional Statements | [06_chapter_JS_Conditional_loops](06_chapter_JS_Conditional_loops/) | 🟡 In progress | `if`, `if/else`, nested conditions and multiple conditions |
+| 07 | Switch Statements | [07_chapter_JS_Switch](07_chapter_JS_Switch/) | 🟡 In progress | `switch`, grouped cases, API response handling and practice questions |
+| 08 | User Input | [08_chapter_JS_UserInput](08_chapter_JS_UserInput/) | 🟡 In progress | Browser prompts, Node.js `readline`, `prompt-sync` and reading files |
+| 09 | For Loops | [09_chapter_JS_Loops](09_chapter_JS_Loops/) | 🟡 In progress | `for` loops, iteration and interview exercises |
+| 10 | While Loops | [10_chapter_JS_Loops_While](10_chapter_JS_Loops_While/) | 🟡 In progress | `while` loops, loop exercises and `break` |
+| 11 | Do...While Loops | [11_chapter_JS_Loops_DoWhile](11_chapter_JS_Loops_DoWhile/) | 🟡 In progress | `do...while`, nested loops and interview exercises |
 
 ---
 
@@ -123,27 +141,46 @@ LearnJSTSPlaywright4x/
 │   ├── 26_IQ1.js – 27_String.js             # Comparison exercise and strings
 │   ├── 28_Ternary.js – 36.IQ.js             # Ternary operator examples and exercises
 │   └── 37.typeof.js                        # typeof practice
-└── 05_chapter_JS_Inc_Dec_Operators/
-    ├── 38_ID.js – 39_ID_Op.js               # Prefix and postfix increment
-    ├── 40_IQ.js – 43_IQ4.js                 # Increment expression exercises
-    ├── 44_Pre_De.js – 45_Post_De.js          # Prefix and postfix decrement
-    └── 46_Nullish_Op.js                     # Nullish coalescing defaults
+├── 05_chapter_JS_Inc_Dec_Operators/
+│   ├── 38_ID.js – 39_ID_Op.js               # Prefix and postfix increment
+│   ├── 40_IQ.js – 43_IQ4.js                 # Increment expression exercises
+│   ├── 44_Pre_De.js – 45_Post_De.js          # Prefix and postfix decrement
+│   └── 46_Nullish_Op.js                     # Nullish coalescing defaults
+├── 06_chapter_JS_Conditional_loops/
+│   └── 46_IF.js – 49_MultipleCondition.js    # if/else and compound conditions
+├── 07_chapter_JS_Switch/
+│   └── 50_Switch.js – 58_IQ6.js              # switch cases, grouping and exercises
+├── 08_chapter_JS_UserInput/
+│   └── 59_UI.js – 62_FS_readFile.js          # Browser and Node input, file reading
+├── 09_chapter_JS_Loops/
+│   └── 63_Loops.js – 69_IQ4.js               # for loops and exercises
+├── 10_chapter_JS_Loops_While/
+│   └── 70_while_loop.js – 73_Break.js         # while loops and break
+├── 11_chapter_JS_Loops_DoWhile/
+│   └── 74_dowhile.js – 77_IQ2.js              # do...while, nested loops and exercises
+├── Task/
+│   ├── 12_Operators/                          # Operator practice
+│   ├── 14_GradeCalculator.js                  # Grade calculator exercise
+│   └── 16_Triangle Classifier.js              # Triangle classification exercise
+├── package.json
+└── package-lock.json
 ```
 
 ---
 
 ## Getting Started
 
-You only need [Node.js](https://nodejs.org/) 18 or newer. No `npm install` yet.
+You need [Node.js](https://nodejs.org/) 18 or newer. Install the project dependency for the Node.js input lessons:
 
 ```bash
 git clone https://github.com/Bhavya39481/LearnJSTSPlaywright.git
 cd LearnJSTSPlaywright
-node --version                              # v18+ (tested on v22)
-node 01_chapter_JS_Basics/01_HelloWorld.js  # Hello World!
+npm install
+node --version                               # v18+
+node 01_chapter_JS_Basics/01_Helloworld.js   # Hello World!
 ```
 
-Every lesson file runs the same way: `node <chapter folder>/<file>.js`.
+Run a lesson with `node <chapter folder>/<file>.js`. Some input lessons are interactive and prompt for input.
 
 ---
 
@@ -1037,7 +1074,46 @@ Unlike `||`, `??` does not replace valid falsy values such as `0`, `false` or an
 
 ---
 
+## Chapter 06: Conditional Statements
+
+The lessons in [06_chapter_JS_Conditional_loops](06_chapter_JS_Conditional_loops/) introduce `if` and `if/else`, then build up to nested branches and multiple conditions.
+
+Lessons: `46_IF.js`, `47_IF_Else_Nested.js`, `48_TO_IfElse.js` and `49_MultipleCondition.js`.
+
+## Chapter 07: Switch Statements
+
+[07_chapter_JS_Switch](07_chapter_JS_Switch/) covers `switch` selection, grouping cases, handling API-style values, and practice questions.
+
+Lessons: `50_Switch.js` through `58_IQ6.js`.
+
+## Chapter 08: User Input
+
+[08_chapter_JS_UserInput](08_chapter_JS_UserInput/) demonstrates browser prompts and Node.js input with `readline` and `prompt-sync`, followed by reading a file.
+
+Lessons: `59_UI.js`, `60_Node_JS_Readline.js`, `61_Prompt_Sync.js` and `62_FS_readFile.js`.
+
+## Chapter 09: For Loops
+
+[09_chapter_JS_Loops](09_chapter_JS_Loops/) introduces `for` loops and uses exercises to practice repeated work and iteration.
+
+Lessons: `63_Loops.js` through `69_IQ4.js`.
+
+## Chapter 10: While Loops
+
+[10_chapter_JS_Loops_While](10_chapter_JS_Loops_While/) covers `while` loops, loop exercises and exiting a loop with `break`.
+
+Lessons: `70_while_loop.js` through `73_Break.js`.
+
+## Chapter 11: Do...While Loops
+
+[11_chapter_JS_Loops_DoWhile](11_chapter_JS_Loops_DoWhile/) explores `do...while` loops, nested loops and interview exercises, including a comparison with `while`.
+
+Lessons: `74_dowhile.js` through `77_IQ2.js`.
+
+The [Task](Task/) folder contains additional JavaScript exercises, including a grade calculator and triangle classifier.
+
+---
+
 ## Coming Up
 
-- **Chapter 04: Operators** and **Chapter 05: Increment, Decrement and Nullish Coalescing** are in progress.
-- Then TypeScript, then Playwright.
+- **Chapters 04–11** are in progress. Continue with TypeScript, then Playwright.

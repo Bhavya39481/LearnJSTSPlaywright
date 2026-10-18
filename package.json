@@ -1,0 +1,23 @@
+{
+  "name": "learnjstsplaywright",
+  "version": "1.0.0",
+  "description": "![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-yellow)\r ![Node.js](https://img.shields.io/badge/Node.js-18%2B-green)\r ![Prompt Engineering](https://img.shields.io/badge/Prompt_Eng-RICE--POT-purple)\r ![Increment and Decrement](https://img.shields.io/badge/JS-Increment_%26_Decrement-f7df1e?logo=javascript&logoColor=black)\r ![Nullish Coalescing](https://img.shields.io/badge/JS-Nullish_Coalescing-f7df1e?logo=javascript&logoColor=black)",
+  "homepage": "https://github.com/Bhavya39481/LearnJSTSPlaywright#readme",
+  "bugs": {
+    "url": "https://github.com/Bhavya39481/LearnJSTSPlaywright/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bhavya39481/LearnJSTSPlaywright.git"
+  },
+  "license": "ISC",
+  "author": "Bhavya",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
