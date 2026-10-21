@@ -48,6 +48,7 @@ A chapter-by-chapter learning repo for testers moving into JavaScript, TypeScrip
 - [Chapter 09: For Loops](#chapter-09-for-loops)
 - [Chapter 10: While Loops](#chapter-10-while-loops)
 - [Chapter 11: Do...While Loops](#chapter-11-dowhile-loops)
+- [Chapter 12: JavaScript Arrays](#chapter-12-javascript-arrays)
 - [Coming Up](#coming-up)
 
 ---
@@ -67,7 +68,8 @@ flowchart LR
     C8 --> C9["09 For Loops"]:::progress
     C9 --> C10["10 While Loops"]:::progress
     C10 --> C11["11 Do...While Loops"]:::progress
-    C11 --> TS["TypeScript"]:::planned
+    C11 --> C12["12 JavaScript Arrays"]:::progress
+    C12 --> TS["TypeScript"]:::planned
     TS --> PW["Playwright"]:::planned
 
     classDef done fill:#d1fae5,stroke:#059669,color:#064e3b
@@ -93,6 +95,7 @@ flowchart LR
 | 09 | For Loops | [09_chapter_JS_Loops](09_chapter_JS_Loops/) | 🟡 In progress | `for` loops, iteration and interview exercises |
 | 10 | While Loops | [10_chapter_JS_Loops_While](10_chapter_JS_Loops_While/) | 🟡 In progress | `while` loops, loop exercises and `break` |
 | 11 | Do...While Loops | [11_chapter_JS_Loops_DoWhile](11_chapter_JS_Loops_DoWhile/) | 🟡 In progress | `do...while`, nested loops and interview exercises |
+| 12 | JavaScript Arrays | [12_chapter_JS_Arrays](12_chapter_JS_Arrays/) | 🟡 In progress | Creating, accessing, modifying, searching, iterating and transforming arrays |
 
 ---
 
@@ -158,6 +161,12 @@ LearnJSTSPlaywright4x/
 │   └── 70_while_loop.js – 73_Break.js         # while loops and break
 ├── 11_chapter_JS_Loops_DoWhile/
 │   └── 74_dowhile.js – 77_IQ2.js              # do...while, nested loops and exercises
+├── 12_chapter_JS_Arrays/
+│   ├── 78_Array.js – 83_Access_modify.js       # Array basics, creation, access and updates
+│   ├── 84_Add_remove.js – 85_Array.js          # Adding and removing array elements
+│   ├── 86_Seraching.js – 88_Iterate.js          # Searching, finding and iterating
+│   ├── 89_Array_Transform.js                   # Transforming and filtering arrays
+│   └── 90_Sorting.js                           # Sorting lesson
 ├── Task/
 │   ├── 12_Operators/                          # Operator practice
 │   ├── 14_GradeCalculator.js                  # Grade calculator exercise
@@ -1110,10 +1119,16 @@ Lessons: `70_while_loop.js` through `73_Break.js`.
 
 Lessons: `74_dowhile.js` through `77_IQ2.js`.
 
+## Chapter 12: JavaScript Arrays
+
+[12_chapter_JS_Arrays](12_chapter_JS_Arrays/) introduces array creation and access, modifying elements, adding and removing values, searching, iteration, and transformations with methods such as `map()` and `filter()`.
+
+Lessons: `78_Array.js` through `89_Array_Transform.js`, plus an empty-array and `push()` example. `90_Sorting.js` is present for the upcoming sorting lesson.
+
 The [Task](Task/) folder contains additional JavaScript exercises, including a grade calculator and triangle classifier.
 
 ---
 
 ## Coming Up
 
-- **Chapters 04–11** are in progress. Continue with TypeScript, then Playwright.
+- **Chapters 04–12** are in progress. Continue with TypeScript, then Playwright.
