@@ -1,0 +1,8 @@
+let [a,b, ...rest]=[10,20,30,40,505];
+console.log(a);
+console.log(b);
+console.log(rest);
+
+
+let [, , third]= [10,20,30];
+console.log(third)

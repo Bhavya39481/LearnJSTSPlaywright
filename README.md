@@ -95,7 +95,7 @@ flowchart LR
 | 09 | For Loops | [09_chapter_JS_Loops](09_chapter_JS_Loops/) | 🟡 In progress | `for` loops, iteration and interview exercises |
 | 10 | While Loops | [10_chapter_JS_Loops_While](10_chapter_JS_Loops_While/) | 🟡 In progress | `while` loops, loop exercises and `break` |
 | 11 | Do...While Loops | [11_chapter_JS_Loops_DoWhile](11_chapter_JS_Loops_DoWhile/) | 🟡 In progress | `do...while`, nested loops and interview exercises |
-| 12 | JavaScript Arrays | [12_chapter_JS_Arrays](12_chapter_JS_Arrays/) | 🟡 In progress | Creating, accessing, modifying, searching, iterating and transforming arrays |
+| 12 | JavaScript Arrays | [12_chapter_JS_Arrays](12_chapter_JS_Arrays/) | 🟡 In progress | Creating, accessing, modifying, searching, iterating, sorting, slicing, combining, checking and destructuring arrays |
 
 ---
 
@@ -165,12 +165,24 @@ LearnJSTSPlaywright4x/
 │   ├── 78_Array.js – 83_Access_modify.js       # Array basics, creation, access and updates
 │   ├── 84_Add_remove.js – 85_Array.js          # Adding and removing array elements
 │   ├── 86_Seraching.js – 88_Iterate.js          # Searching, finding and iterating
-│   ├── 89_Array_Transform.js                   # Transforming and filtering arrays
-│   └── 90_Sorting.js                           # Sorting lesson
+│   ├── 89_Array_Transform.js – 90_Sorting.js    # Transforming, filtering and default sorting
+│   ├── 91_Lexicographic_Explain.md              # Why default sort compares values as strings
+│   ├── 92_Array_Normal_Sorting.js                # Numeric and locale-aware sorting
+│   ├── 93_Array_Slicing.js                      # Copying array ranges with slice()
+│   ├── 93_Slice_explanatio .md                  # Negative indices and slice() ranges
+│   ├── 94_Array_concat.js                       # Combining arrays with concat() and spread
+│   ├── 95_Array_Check.js                        # Array.isArray(), every() and some()
+│   ├── 96_Array_Transform.js – 97_Array_copy.js  # Array transformations and copying
+│   ├── 98_Array_Destructure.js                  # Destructuring array elements
+│   ├── 99_Destructure_Spread.js                 # Rest and skipped elements
+│   ├── 100_Array_Swaping.js                     # Swapping values with destructuring
+│   └── create_EmptyArr_Push_Element.js          # Create an empty array and add an element
 ├── Task/
 │   ├── 12_Operators/                          # Operator practice
 │   ├── 14_GradeCalculator.js                  # Grade calculator exercise
 │   └── 16_Triangle Classifier.js              # Triangle classification exercise
+├── Practice/
+│   └── tempCodeRunnerFile.js                  # While-loop practice scratch file
 ├── package.json
 └── package-lock.json
 ```
@@ -1121,9 +1133,9 @@ Lessons: `74_dowhile.js` through `77_IQ2.js`.
 
 ## Chapter 12: JavaScript Arrays
 
-[12_chapter_JS_Arrays](12_chapter_JS_Arrays/) introduces array creation and access, modifying elements, adding and removing values, searching, iteration, and transformations with methods such as `map()` and `filter()`.
+[12_chapter_JS_Arrays](12_chapter_JS_Arrays/) introduces array creation and access, modifying elements, adding and removing values, searching and iteration, transformations with methods such as `map()` and `filter()`, sorting, slicing and combining arrays, checks with `every()` and `some()`, copying, destructuring and swapping values.
 
-Lessons: `78_Array.js` through `89_Array_Transform.js`, plus an empty-array and `push()` example. `90_Sorting.js` is present for the upcoming sorting lesson.
+Lessons: `78_Array.js` through `100_Array_Swaping.js`, plus `create_EmptyArr_Push_Element.js`. The chapter also includes [91_Lexicographic_Explain.md](12_chapter_JS_Arrays/91_Lexicographic_Explain.md) and [93_Slice_explanatio .md](12_chapter_JS_Arrays/93_Slice_explanatio%20.md), which explain default sorting and slice ranges.
 
 The [Task](Task/) folder contains additional JavaScript exercises, including a grade calculator and triangle classifier.
 
