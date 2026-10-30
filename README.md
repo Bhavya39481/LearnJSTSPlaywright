@@ -117,6 +117,8 @@ flowchart LR
 LearnJSTSPlaywright4x/
 ├── README.md
 ├── .gitignore
+├── 00_learning/
+│   └── charAt_vs_At_string.md                   # Compare charAt() and at() indexing
 ├── 00_chapter_Prompt_Eng/
 │   ├── 00_RICE_POT_FullForm.md             # What each RICE-POT letter means
 │   ├── 01_RICE_POT_Prompt.md               # Worked prompt: Salesforce login (Selenium + TestNG)
@@ -204,7 +206,10 @@ LearnJSTSPlaywright4x/
 ├── 16_chapter_JS_Strings/
 │   ├── 129_string.js                             # String values and template literals
 │   ├── 130_string_fn.js                          # String properties and character access
-│   └── 131_string_Search.js                     # includes(), startsWith(), endsWith() and indexOf()
+│   ├── 131_string_Search.js                     # Search, trim and substring/slice examples
+│   ├── chatAT_at.js                             # Compare charAt() and at() indexing
+│   ├── string_replace.js                         # Replacing a matching substring
+│   └── string_replaceall.js                      # replaceAll(), split(), repeat() and character codes
 ├── Task/
 │   ├── 12_Operators/                          # Operator practice
 │   ├── 14_GradeCalculator.js                  # Grade calculator exercise
@@ -1187,9 +1192,9 @@ Lesson: `128_Closure.js`.
 
 ## Chapter 16: JavaScript Strings
 
-[16_chapter_JS_Strings](16_chapter_JS_Strings/) covers string values, single- and double-quoted strings, template literals and interpolation, string length and character access, and searching with `includes()`, `startsWith()`, `endsWith()`, `indexOf()` and `lastIndexOf()`.
+[16_chapter_JS_Strings](16_chapter_JS_Strings/) covers string values, single- and double-quoted strings, template literals and interpolation, string length and character access with `charAt()` and `at()`, and searching with `includes()`, `startsWith()`, `endsWith()`, `indexOf()` and `lastIndexOf()`. It also demonstrates trimming whitespace, extracting text with `substring()`, `slice()` and `substr()`, replacing text with `replace()` and `replaceAll()`, splitting strings, repeating strings and converting character codes. The [charAt_vs_At_string.md](00_learning/charAt_vs_At_string.md) note compares their indexing behavior.
 
-Lessons: `129_string.js` through `131_string_Search.js`.
+Lessons: `129_string.js` through `131_string_Search.js`, plus `chatAT_at.js`, `string_replace.js` and `string_replaceall.js`.
 
 ---
 
