@@ -49,6 +49,10 @@ A chapter-by-chapter learning repo for testers moving into JavaScript, TypeScrip
 - [Chapter 10: While Loops](#chapter-10-while-loops)
 - [Chapter 11: Do...While Loops](#chapter-11-dowhile-loops)
 - [Chapter 12: JavaScript Arrays](#chapter-12-javascript-arrays)
+- [Chapter 13: JavaScript Functions](#chapter-13-javascript-functions)
+- [Chapter 14: Hoisting and the Temporal Dead Zone](#chapter-14-hoisting-and-the-temporal-dead-zone)
+- [Chapter 15: Closures](#chapter-15-closures)
+- [Chapter 16: JavaScript Strings](#chapter-16-javascript-strings)
 - [Coming Up](#coming-up)
 
 ---
@@ -69,7 +73,11 @@ flowchart LR
     C9 --> C10["10 While Loops"]:::progress
     C10 --> C11["11 Do...While Loops"]:::progress
     C11 --> C12["12 JavaScript Arrays"]:::progress
-    C12 --> TS["TypeScript"]:::planned
+    C12 --> C13["13 Functions"]:::progress
+    C13 --> C14["14 Hoisting and TDZ"]:::progress
+    C14 --> C15["15 Closures"]:::progress
+    C15 --> C16["16 Strings"]:::progress
+    C16 --> TS["TypeScript"]:::planned
     TS --> PW["Playwright"]:::planned
 
     classDef done fill:#d1fae5,stroke:#059669,color:#064e3b
@@ -96,6 +104,10 @@ flowchart LR
 | 10 | While Loops | [10_chapter_JS_Loops_While](10_chapter_JS_Loops_While/) | 🟡 In progress | `while` loops, loop exercises and `break` |
 | 11 | Do...While Loops | [11_chapter_JS_Loops_DoWhile](11_chapter_JS_Loops_DoWhile/) | 🟡 In progress | `do...while`, nested loops and interview exercises |
 | 12 | JavaScript Arrays | [12_chapter_JS_Arrays](12_chapter_JS_Arrays/) | 🟡 In progress | Creating, accessing, modifying, searching, iterating, sorting, slicing, combining, checking and destructuring arrays |
+| 13 | JavaScript Functions | [13_chapter_JS_functions](13_chapter_JS_functions/) | 🟡 In progress | Function declarations and expressions, parameters, return values, arrow functions, IIFEs and spread arguments |
+| 14 | Hoisting and the Temporal Dead Zone | [14_chapter_JS_var_let_const_hoisting,TDZ](14_chapter_JS_var_let_const_hoisting,TDZ/) | 🟡 In progress | `var`, `let` and `const` scope, hoisting, function hoisting, redeclaration and TDZ errors |
+| 15 | Closures | [15_chapter_JS_function_closure](15_chapter_JS_function_closure/) | 🟡 In progress | How an inner function can access variables from its enclosing scope |
+| 16 | JavaScript Strings | [16_chapter_JS_Strings](16_chapter_JS_Strings/) | 🟡 In progress | String literals, template literals, properties, character access and search methods |
 
 ---
 
@@ -177,6 +189,22 @@ LearnJSTSPlaywright4x/
 │   ├── 99_Destructure_Spread.js                 # Rest and skipped elements
 │   ├── 100_Array_Swaping.js                     # Swapping values with destructuring
 │   └── create_EmptyArr_Push_Element.js          # Create an empty array and add an element
+├── 13_chapter_JS_functions/
+│   ├── 101_fn.js – 105_Type5_fn.js              # Function declarations, parameters and return values
+│   ├── 106_Template_Literal.js                  # Template literals in function output
+│   ├── 107_fn_Exp.js – 111_ArrowMultiple.js      # Function expressions and arrow functions
+│   ├── 112_Real_fn.js – 116_Return_fn.js         # Practical functions, spread arguments and return values
+│   └── console_return.js                        # Console output versus returned values
+├── 14_chapter_JS_var_let_const_hoisting,TDZ/
+│   ├── 117.js – 120_const.js                     # var, let and const declarations and scope
+│   ├── 121_var_hoisting.js – 123_fn_hoisting.js   # Variable and function hoisting
+│   └── 124_Let_TDZ.js – 127_TDZ_typeof.js         # Temporal dead zone and redeclaration examples
+├── 15_chapter_JS_function_closure/
+│   └── 128_Closure.js                            # Function closure example
+├── 16_chapter_JS_Strings/
+│   ├── 129_string.js                             # String values and template literals
+│   ├── 130_string_fn.js                          # String properties and character access
+│   └── 131_string_Search.js                     # includes(), startsWith(), endsWith() and indexOf()
 ├── Task/
 │   ├── 12_Operators/                          # Operator practice
 │   ├── 14_GradeCalculator.js                  # Grade calculator exercise
@@ -1139,8 +1167,32 @@ Lessons: `78_Array.js` through `100_Array_Swaping.js`, plus `create_EmptyArr_Pus
 
 The [Task](Task/) folder contains additional JavaScript exercises, including a grade calculator and triangle classifier.
 
+## Chapter 13: JavaScript Functions
+
+[13_chapter_JS_functions](13_chapter_JS_functions/) covers defining and calling functions, parameters and arguments, return values, function expressions, arrow functions, IIFEs, template literals in output, and spreading arguments into function calls. The examples include practical helpers such as status-code validation.
+
+Lessons: `101_fn.js` through `116_Return_fn.js`, plus `console_return.js`.
+
+## Chapter 14: Hoisting and the Temporal Dead Zone
+
+[14_chapter_JS_var_let_const_hoisting,TDZ](14_chapter_JS_var_let_const_hoisting,TDZ/) compares `var`, `let` and `const` scope, demonstrates variable and function hoisting, and explores redeclaration and the temporal dead zone (TDZ). `var` declarations are initialized to `undefined` when hoisted; `let` and `const` cannot be accessed before their declaration is reached.
+
+Lessons: `117.js` through `127_TDZ_typeof.js`.
+
+## Chapter 15: Closures
+
+[15_chapter_JS_function_closure](15_chapter_JS_function_closure/) introduces closures: an inner function can retain access to variables from its enclosing function scope.
+
+Lesson: `128_Closure.js`.
+
+## Chapter 16: JavaScript Strings
+
+[16_chapter_JS_Strings](16_chapter_JS_Strings/) covers string values, single- and double-quoted strings, template literals and interpolation, string length and character access, and searching with `includes()`, `startsWith()`, `endsWith()`, `indexOf()` and `lastIndexOf()`.
+
+Lessons: `129_string.js` through `131_string_Search.js`.
+
 ---
 
 ## Coming Up
 
-- **Chapters 04–12** are in progress. Continue with TypeScript, then Playwright.
+- **Chapters 04–16** are in progress. Continue with TypeScript, then Playwright.
