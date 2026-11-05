@@ -224,13 +224,14 @@ LearnJSTSPlaywright4x/
 │                                                  # Object argument behavior and object copying
 ├── 18_chapter_JS_2D_Array/
 │   ├── 140_Multi_Dimenstional.js – 143_arrays_fn.js # 2D arrays, nested iteration and examples
-│   └── 144_Right_Hand_Pattern.js – 145_Left_Hand_triangle.js
-│                                                  # Triangle pattern exercises
+│   ├── 144_Right_Hand_Pattern.js – 145_Left_Hand_triangle.js # Triangle patterns
+│   └── 146_Pyramid_pattern.js                    # Centered pyramid pattern
 ├── Task/
 │   ├── 12_Operators                            # Operator practice
 │   ├── 14_FizzBuzz.js, 14_GradeCalculator.js    # FizzBuzz and grade calculator
 │   ├── 14_Triangle Classifier.js                # Triangle classification
 │   ├── 21_*.js                                   # Array duplicate, frequency, max, min, reverse, sort and sum tasks
+│   ├── 2_11_*.js                                 # Left/right triangle and pyramid pattern tasks
 │   └── 30_*.js                                   # String anagram, palindrome, vowel/consonant, deduplication and reverse tasks
 ├── Practice/
 │   └── tempCodeRunnerFile.js                  # While-loop practice scratch file
@@ -1224,9 +1225,9 @@ Lessons: `132_Objects.js` through `139_shallow_copy_vs_deep_copy.js`.
 
 ## Chapter 18: JavaScript 2D Arrays
 
-[18_chapter_JS_2D_Array](18_chapter_JS_2D_Array/) covers multidimensional arrays, iterating through rows and elements, and building right- and left-aligned triangle patterns.
+[18_chapter_JS_2D_Array](18_chapter_JS_2D_Array/) covers multidimensional arrays, iterating through rows and elements, and building right- and left-aligned triangle and centered pyramid patterns.
 
-Lessons: `140_Multi_Dimenstional.js` through `145_Left_Hand_triangle.js`.
+Lessons: `140_Multi_Dimenstional.js` through `146_Pyramid_pattern.js`.
 
 ---
 
@@ -1236,6 +1237,7 @@ The [`Task/`](Task/) folder contains standalone practice programs grouped by top
 
 - **Operators and conditionals:** `12_Operators`, `14_FizzBuzz.js`, `14_GradeCalculator.js` and `14_Triangle Classifier.js`.
 - **Arrays:** `21_Duplicate_Element.js`, `21_Frequency_element_Array.js`, `21_Max_number_Array.js`, `21_Reverse_Array.js`, `21_Smallest_Ele.js`, `21_Sort_Asce.js` and `21_Sum_Array.js`.
+- **Patterns:** `2_11_Left_hand_Triangle.js`, `2_11_Right_hand_Triangle.js` and `2_11_Pyramid.js`.
 - **Strings:** `30_Count Vowels and Consonants.js`, `30_Java Anagrams.js`, `30_Palindrome Checker.js`, `30_Remove Duplicate Characters.js` and `30_String Reverse.js`.
 
 Run an interactive exercise from the repository root with `node "Task/<filename>.js"`. The string lessons that read input use the installed `prompt-sync` dependency.
