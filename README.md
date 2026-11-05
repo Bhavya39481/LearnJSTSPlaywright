@@ -53,6 +53,9 @@ A chapter-by-chapter learning repo for testers moving into JavaScript, TypeScrip
 - [Chapter 14: Hoisting and the Temporal Dead Zone](#chapter-14-hoisting-and-the-temporal-dead-zone)
 - [Chapter 15: Closures](#chapter-15-closures)
 - [Chapter 16: JavaScript Strings](#chapter-16-javascript-strings)
+- [Chapter 17: JavaScript Objects](#chapter-17-javascript-objects)
+- [Chapter 18: JavaScript 2D Arrays](#chapter-18-javascript-2d-arrays)
+- [Practice Tasks](#practice-tasks)
 - [Coming Up](#coming-up)
 
 ---
@@ -77,7 +80,9 @@ flowchart LR
     C13 --> C14["14 Hoisting and TDZ"]:::progress
     C14 --> C15["15 Closures"]:::progress
     C15 --> C16["16 Strings"]:::progress
-    C16 --> TS["TypeScript"]:::planned
+    C16 --> C17["17 Objects"]:::progress
+    C17 --> C18["18 2D Arrays"]:::progress
+    C18 --> TS["TypeScript"]:::planned
     TS --> PW["Playwright"]:::planned
 
     classDef done fill:#d1fae5,stroke:#059669,color:#064e3b
@@ -108,6 +113,8 @@ flowchart LR
 | 14 | Hoisting and the Temporal Dead Zone | [14_chapter_JS_var_let_const_hoisting,TDZ](14_chapter_JS_var_let_const_hoisting,TDZ/) | 🟡 In progress | `var`, `let` and `const` scope, hoisting, function hoisting, redeclaration and TDZ errors |
 | 15 | Closures | [15_chapter_JS_function_closure](15_chapter_JS_function_closure/) | 🟡 In progress | How an inner function can access variables from its enclosing scope |
 | 16 | JavaScript Strings | [16_chapter_JS_Strings](16_chapter_JS_Strings/) | 🟡 In progress | String literals, template literals, properties, character access and search methods |
+| 17 | JavaScript Objects | [17_chapyer_JS_Objects](17_chapyer_JS_Objects/) | 🟡 In progress | Object creation, object references, functions, configuration, pass-by-value/reference and shallow versus deep copies |
+| 18 | JavaScript 2D Arrays | [18_chapter_JS_2D_Array](18_chapter_JS_2D_Array/) | 🟡 In progress | Multidimensional arrays, nested iteration and right- and left-aligned triangle patterns |
 
 ---
 
@@ -118,7 +125,8 @@ LearnJSTSPlaywright4x/
 ├── README.md
 ├── .gitignore
 ├── 00_learning/
-│   └── charAt_vs_At_string.md                   # Compare charAt() and at() indexing
+│   ├── charAt_vs_At_string.md                   # Compare charAt() and at() indexing
+│   └── rarely_used_methods.md                   # Less common and legacy string methods
 ├── 00_chapter_Prompt_Eng/
 │   ├── 00_RICE_POT_FullForm.md             # What each RICE-POT letter means
 │   ├── 01_RICE_POT_Prompt.md               # Worked prompt: Salesforce login (Selenium + TestNG)
@@ -210,10 +218,20 @@ LearnJSTSPlaywright4x/
 │   ├── chatAT_at.js                             # Compare charAt() and at() indexing
 │   ├── string_replace.js                         # Replacing a matching substring
 │   └── string_replaceall.js                      # replaceAll(), split(), repeat() and character codes
+├── 17_chapyer_JS_Objects/
+│   ├── 132_Objects.js – 137_config.js             # Objects, references, object functions and configuration
+│   └── 138_call_by_ref_call_by_value.js – 139_shallow_copy_vs_deep_copy.js
+│                                                  # Object argument behavior and object copying
+├── 18_chapter_JS_2D_Array/
+│   ├── 140_Multi_Dimenstional.js – 143_arrays_fn.js # 2D arrays, nested iteration and examples
+│   └── 144_Right_Hand_Pattern.js – 145_Left_Hand_triangle.js
+│                                                  # Triangle pattern exercises
 ├── Task/
-│   ├── 12_Operators/                          # Operator practice
-│   ├── 14_GradeCalculator.js                  # Grade calculator exercise
-│   └── 16_Triangle Classifier.js              # Triangle classification exercise
+│   ├── 12_Operators                            # Operator practice
+│   ├── 14_FizzBuzz.js, 14_GradeCalculator.js    # FizzBuzz and grade calculator
+│   ├── 14_Triangle Classifier.js                # Triangle classification
+│   ├── 21_*.js                                   # Array duplicate, frequency, max, min, reverse, sort and sum tasks
+│   └── 30_*.js                                   # String anagram, palindrome, vowel/consonant, deduplication and reverse tasks
 ├── Practice/
 │   └── tempCodeRunnerFile.js                  # While-loop practice scratch file
 ├── package.json
@@ -1198,6 +1216,34 @@ Lessons: `129_string.js` through `131_string_Search.js`, plus `chatAT_at.js`, `s
 
 ---
 
+## Chapter 17: JavaScript Objects
+
+[17_chapyer_JS_Objects](17_chapyer_JS_Objects/) introduces JavaScript objects and object references, functions and configuration objects, argument passing, and shallow versus deep copying.
+
+Lessons: `132_Objects.js` through `139_shallow_copy_vs_deep_copy.js`.
+
+## Chapter 18: JavaScript 2D Arrays
+
+[18_chapter_JS_2D_Array](18_chapter_JS_2D_Array/) covers multidimensional arrays, iterating through rows and elements, and building right- and left-aligned triangle patterns.
+
+Lessons: `140_Multi_Dimenstional.js` through `145_Left_Hand_triangle.js`.
+
+---
+
+## Practice Tasks
+
+The [`Task/`](Task/) folder contains standalone practice programs grouped by topic:
+
+- **Operators and conditionals:** `12_Operators`, `14_FizzBuzz.js`, `14_GradeCalculator.js` and `14_Triangle Classifier.js`.
+- **Arrays:** `21_Duplicate_Element.js`, `21_Frequency_element_Array.js`, `21_Max_number_Array.js`, `21_Reverse_Array.js`, `21_Smallest_Ele.js`, `21_Sort_Asce.js` and `21_Sum_Array.js`.
+- **Strings:** `30_Count Vowels and Consonants.js`, `30_Java Anagrams.js`, `30_Palindrome Checker.js`, `30_Remove Duplicate Characters.js` and `30_String Reverse.js`.
+
+Run an interactive exercise from the repository root with `node "Task/<filename>.js"`. The string lessons that read input use the installed `prompt-sync` dependency.
+
+The [rarely_used_methods.md](00_learning/rarely_used_methods.md) reference also covers uncommon and legacy JavaScript string methods.
+
+---
+
 ## Coming Up
 
-- **Chapters 04–16** are in progress. Continue with TypeScript, then Playwright.
+- **Chapters 04–18** are in progress. Continue with TypeScript, then Playwright.
