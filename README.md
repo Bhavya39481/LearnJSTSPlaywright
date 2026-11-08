@@ -55,7 +55,11 @@ A chapter-by-chapter learning repo for testers moving into JavaScript, TypeScrip
 - [Chapter 16: JavaScript Strings](#chapter-16-javascript-strings)
 - [Chapter 17: JavaScript Objects](#chapter-17-javascript-objects)
 - [Chapter 18: JavaScript 2D Arrays](#chapter-18-javascript-2d-arrays)
+- [Chapter 19: JavaScript Callbacks](#chapter-19-javascript-callbacks)
+- [Chapter 20: JavaScript Promises](#chapter-20-javascript-promises)
+- [Chapter 21: Async/Await](#chapter-21-asyncawait)
 - [Practice Tasks](#practice-tasks)
+- [Async/Await Reference](#asyncawait-reference)
 - [Coming Up](#coming-up)
 
 ---
@@ -82,7 +86,10 @@ flowchart LR
     C15 --> C16["16 Strings"]:::progress
     C16 --> C17["17 Objects"]:::progress
     C17 --> C18["18 2D Arrays"]:::progress
-    C18 --> TS["TypeScript"]:::planned
+    C18 --> C19["19 Callbacks"]:::progress
+    C19 --> C20["20 Promises"]:::progress
+    C20 --> C21["21 Async/Await"]:::progress
+    C21 --> TS["TypeScript"]:::planned
     TS --> PW["Playwright"]:::planned
 
     classDef done fill:#d1fae5,stroke:#059669,color:#064e3b
@@ -115,6 +122,9 @@ flowchart LR
 | 16 | JavaScript Strings | [16_chapter_JS_Strings](16_chapter_JS_Strings/) | 🟡 In progress | String literals, template literals, properties, character access and search methods |
 | 17 | JavaScript Objects | [17_chapyer_JS_Objects](17_chapyer_JS_Objects/) | 🟡 In progress | Object creation, object references, functions, configuration, pass-by-value/reference and shallow versus deep copies |
 | 18 | JavaScript 2D Arrays | [18_chapter_JS_2D_Array](18_chapter_JS_2D_Array/) | 🟡 In progress | Multidimensional arrays, nested iteration and right- and left-aligned triangle patterns |
+| 19 | JavaScript Callbacks | [19_chapter_JS_Callback](19_chapter_JS_Callback/) | 🟡 In progress | Callback functions, synchronous and asynchronous callbacks, callback returns and callback nesting |
+| 20 | JavaScript Promises | [20_Promise](20_Promise/) | 🟡 In progress | Promise resolution and rejection, chaining, `finally()`, and `Promise.all()`, `Promise.allSettled()` and `Promise.race()` |
+| 21 | Async/Await | [21_Async_Wait](21_Async_Wait/) | 🟡 In progress | Async functions, sequential and parallel execution, Playwright examples and flaky-test retries |
 
 ---
 
@@ -126,7 +136,8 @@ LearnJSTSPlaywright4x/
 ├── .gitignore
 ├── 00_learning/
 │   ├── charAt_vs_At_string.md                   # Compare charAt() and at() indexing
-│   └── rarely_used_methods.md                   # Less common and legacy string methods
+│   ├── rarely_used_methods.md                   # Less common and legacy string methods
+│   └── Await_Async_Promise.md                   # Playwright page calls that require await
 ├── 00_chapter_Prompt_Eng/
 │   ├── 00_RICE_POT_FullForm.md             # What each RICE-POT letter means
 │   ├── 01_RICE_POT_Prompt.md               # Worked prompt: Salesforce login (Selenium + TestNG)
@@ -226,6 +237,17 @@ LearnJSTSPlaywright4x/
 │   ├── 140_Multi_Dimenstional.js – 143_arrays_fn.js # 2D arrays, nested iteration and examples
 │   ├── 144_Right_Hand_Pattern.js – 145_Left_Hand_triangle.js # Triangle patterns
 │   └── 146_Pyramid_pattern.js                    # Centered pyramid pattern
+├── 19_chapter_JS_Callback/
+│   ├── 147_callback.js – 151_cb_hell.js           # Callback forms, sync/async callbacks and nesting
+│   ├── 152_Real_QA.js                             # Callback-based QA workflow example
+│   └── 153_callback_return.js – 154_pyramid_doom.js # Callback returns and nested callbacks
+├── 20_Promise/
+│   ├── 155_Promise.js – 157_promise_improve.js    # Creating, handling and improving Promises
+│   └── 158_PromiseAll.js – 161_IQ.js              # Promise combinators and practice
+├── 21_Async_Wait/
+│   ├── 162_Async_Await.js – 163_Async_Await2.js   # Async functions and await
+│   ├── 164_Playwright_spec.ts – 165_Playwright_spec2.ts # Playwright test examples
+│   └── 166_Seq_Execution.js – 171_IQ3.js          # Sequential/parallel work and exercises
 ├── Task/
 │   ├── 12_Operators                            # Operator practice
 │   ├── 14_FizzBuzz.js, 14_GradeCalculator.js    # FizzBuzz and grade calculator
@@ -1231,6 +1253,26 @@ Lessons: `140_Multi_Dimenstional.js` through `146_Pyramid_pattern.js`.
 
 ---
 
+## Chapter 19: JavaScript Callbacks
+
+[19_chapter_JS_Callback](19_chapter_JS_Callback/) introduces passing functions as callbacks, including synchronous and asynchronous examples. It also demonstrates returning from callbacks, nested callbacks and callback-based QA workflows.
+
+Lessons: `147_callback.js` through `154_pyramid_doom.js`.
+
+## Chapter 20: JavaScript Promises
+
+[20_Promise](20_Promise/) demonstrates creating Promises, handling resolved and rejected results, chaining and cleanup with `finally()`, and coordinating work with `Promise.all()`, `Promise.allSettled()` and `Promise.race()`.
+
+Lessons: `155_Promise.js` through `161_IQ.js`.
+
+## Chapter 21: Async/Await
+
+[21_Async_Wait](21_Async_Wait/) covers async functions and `await`, sequential versus parallel asynchronous execution, and examples related to Playwright and flaky-test handling.
+
+Lessons: `162_Async_Await.js` through `171_IQ3.js`, including two Playwright TypeScript examples.
+
+---
+
 ## Practice Tasks
 
 The [`Task/`](Task/) folder contains standalone practice programs grouped by topic:
@@ -1246,6 +1288,12 @@ The [rarely_used_methods.md](00_learning/rarely_used_methods.md) reference also 
 
 ---
 
+## Async/Await Reference
+
+The [Await_Async_Promise.md](00_learning/Await_Async_Promise.md) reference lists Playwright `page` members that return Promises versus values immediately, with examples of where `await` is required. It was checked against Playwright 1.65.0 type definitions.
+
+---
+
 ## Coming Up
 
-- **Chapters 04–18** are in progress. Continue with TypeScript, then Playwright.
+- **Chapters 04–21** are in progress. Continue with TypeScript, then Playwright.
