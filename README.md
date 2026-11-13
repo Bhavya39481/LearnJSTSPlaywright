@@ -58,6 +58,9 @@ A chapter-by-chapter learning repo for testers moving into JavaScript, TypeScrip
 - [Chapter 19: JavaScript Callbacks](#chapter-19-javascript-callbacks)
 - [Chapter 20: JavaScript Promises](#chapter-20-javascript-promises)
 - [Chapter 21: Async/Await](#chapter-21-asyncawait)
+- [Chapter 22: ES Modules](#chapter-22-es-modules)
+- [Chapter 23: JavaScript Classes](#chapter-23-javascript-classes)
+- [Chapter 24: Playwright](#chapter-24-playwright)
 - [Practice Tasks](#practice-tasks)
 - [Async/Await Reference](#asyncawait-reference)
 - [Coming Up](#coming-up)
@@ -89,8 +92,10 @@ flowchart LR
     C18 --> C19["19 Callbacks"]:::progress
     C19 --> C20["20 Promises"]:::progress
     C20 --> C21["21 Async/Await"]:::progress
-    C21 --> TS["TypeScript"]:::planned
-    TS --> PW["Playwright"]:::planned
+    C21 --> C22["22 ES Modules<br/>import/export"]:::progress
+    C22 --> C23["23 JavaScript Classes"]:::progress
+    C23 --> C24["24 Playwright<br/>test setup"]:::progress
+    C24 --> TS["TypeScript"]:::planned
 
     classDef done fill:#d1fae5,stroke:#059669,color:#064e3b
     classDef progress fill:#fef3c7,stroke:#d97706,color:#78350f
@@ -125,6 +130,9 @@ flowchart LR
 | 19 | JavaScript Callbacks | [19_chapter_JS_Callback](19_chapter_JS_Callback/) | 🟡 In progress | Callback functions, synchronous and asynchronous callbacks, callback returns and callback nesting |
 | 20 | JavaScript Promises | [20_Promise](20_Promise/) | 🟡 In progress | Promise resolution and rejection, chaining, `finally()`, and `Promise.all()`, `Promise.allSettled()` and `Promise.race()` |
 | 21 | Async/Await | [21_Async_Wait](21_Async_Wait/) | 🟡 In progress | Async functions, sequential and parallel execution, Playwright examples and flaky-test retries |
+| 22 | ES Modules | [22_Export_Import](22_Export_Import/) | 🟡 In progress | Named and default exports, imports, aliases and sharing utility functions between files |
+| 23 | JavaScript Classes | [23_Class_Objects](23_Class_Objects/) | 🟡 In progress | Starter folder for JavaScript class lessons |
+| 24 | Playwright | [24_Playwright](24_Playwright/) | 🟡 In progress | Playwright Test configuration and starter browser tests for Chromium, Firefox and WebKit |
 
 ---
 
@@ -248,6 +256,15 @@ LearnJSTSPlaywright4x/
 │   ├── 162_Async_Await.js – 163_Async_Await2.js   # Async functions and await
 │   ├── 164_Playwright_spec.ts – 165_Playwright_spec2.ts # Playwright test examples
 │   └── 166_Seq_Execution.js – 171_IQ3.js          # Sequential/parallel work and exercises
+├── 22_Export_Import/
+│   ├── 172_Import_Export.js – 174_log_imp.js       # ES module imports, exports and logger examples
+│   ├── utils.js, testUtils.js                      # Named exports for reusable test utilities
+│   └── logs/logger.js                              # Default and named logging exports
+├── 23_Class_Objects/
+│   └── 175_Class.js                                # Starter file for class lessons
+├── 24_Playwright/
+│   ├── playwright.config.ts                       # Chromium, Firefox and WebKit test projects
+│   └── tests/example.spec.ts                       # Starter tests against playwright.dev
 ├── Task/
 │   ├── 12_Operators                            # Operator practice
 │   ├── 14_FizzBuzz.js, 14_GradeCalculator.js    # FizzBuzz and grade calculator
@@ -276,6 +293,19 @@ node 01_chapter_JS_Basics/01_Helloworld.js   # Hello World!
 ```
 
 Run a lesson with `node <chapter folder>/<file>.js`. Some input lessons are interactive and prompt for input.
+
+### Set up and run the Playwright tests
+
+The Playwright project is in `24_Playwright/`. In PowerShell, use `npm.cmd` if your execution policy blocks the `npm.ps1` script:
+
+```powershell
+cd 24_Playwright
+npm.cmd install
+npx.cmd playwright install
+npx.cmd playwright test
+```
+
+The starter configuration runs the tests in Chromium, Firefox and WebKit. Install browser binaries once with `playwright install`; to run only Chromium, use `npx.cmd playwright test --project=chromium`.
 
 ---
 
@@ -1273,6 +1303,24 @@ Lessons: `162_Async_Await.js` through `171_IQ3.js`, including two Playwright Typ
 
 ---
 
+## Chapter 22: ES Modules
+
+[22_Export_Import](22_Export_Import/) demonstrates sharing values and functions between JavaScript files with named and default exports. It includes import aliases, utility modules, and a logger that combines a default `log` export with the named `logBetter` export.
+
+Lessons: `172_Import_Export.js` through `174_log_imp.js`.
+
+## Chapter 23: JavaScript Classes
+
+[23_Class_Objects](23_Class_Objects/) contains the `175_Class.js` starter file for class-based JavaScript lessons.
+
+## Chapter 24: Playwright
+
+[24_Playwright](24_Playwright/) contains a Playwright Test configuration with Chromium, Firefox and WebKit projects, plus starter tests that check the Playwright website title and its Get started navigation.
+
+Run the browser tests from the project folder with `npx playwright test` (or `npx.cmd playwright test` in PowerShell when script execution is restricted). Install browsers first with `npx playwright install`.
+
+---
+
 ## Practice Tasks
 
 The [`Task/`](Task/) folder contains standalone practice programs grouped by topic:
@@ -1296,4 +1344,4 @@ The [Await_Async_Promise.md](00_learning/Await_Async_Promise.md) reference lists
 
 ## Coming Up
 
-- **Chapters 04–21** are in progress. Continue with TypeScript, then Playwright.
+- **Chapters 04–24** are in progress. Continue with TypeScript after the current JavaScript and Playwright lessons.
