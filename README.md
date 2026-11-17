@@ -61,6 +61,7 @@ A chapter-by-chapter learning repo for testers moving into JavaScript, TypeScrip
 - [Chapter 22: ES Modules](#chapter-22-es-modules)
 - [Chapter 23: JavaScript Classes](#chapter-23-javascript-classes)
 - [Chapter 24: Playwright](#chapter-24-playwright)
+- [Chapter 25: Class Constructors](#chapter-25-class-constructors)
 - [Practice Tasks](#practice-tasks)
 - [Async/Await Reference](#asyncawait-reference)
 - [Coming Up](#coming-up)
@@ -95,7 +96,8 @@ flowchart LR
     C21 --> C22["22 ES Modules<br/>import/export"]:::progress
     C22 --> C23["23 JavaScript Classes"]:::progress
     C23 --> C24["24 Playwright<br/>test setup"]:::progress
-    C24 --> TS["TypeScript"]:::planned
+    C24 --> C25["25 Class Constructors"]:::progress
+    C25 --> TS["TypeScript"]:::planned
 
     classDef done fill:#d1fae5,stroke:#059669,color:#064e3b
     classDef progress fill:#fef3c7,stroke:#d97706,color:#78350f
@@ -128,11 +130,12 @@ flowchart LR
 | 17 | JavaScript Objects | [17_chapyer_JS_Objects](17_chapyer_JS_Objects/) | 🟡 In progress | Object creation, object references, functions, configuration, pass-by-value/reference and shallow versus deep copies |
 | 18 | JavaScript 2D Arrays | [18_chapter_JS_2D_Array](18_chapter_JS_2D_Array/) | 🟡 In progress | Multidimensional arrays, nested iteration and right- and left-aligned triangle patterns |
 | 19 | JavaScript Callbacks | [19_chapter_JS_Callback](19_chapter_JS_Callback/) | 🟡 In progress | Callback functions, synchronous and asynchronous callbacks, callback returns and callback nesting |
-| 20 | JavaScript Promises | [20_Promise](20_Promise/) | 🟡 In progress | Promise resolution and rejection, chaining, `finally()`, and `Promise.all()`, `Promise.allSettled()` and `Promise.race()` |
-| 21 | Async/Await | [21_Async_Wait](21_Async_Wait/) | 🟡 In progress | Async functions, sequential and parallel execution, Playwright examples and flaky-test retries |
-| 22 | ES Modules | [22_Export_Import](22_Export_Import/) | 🟡 In progress | Named and default exports, imports, aliases and sharing utility functions between files |
-| 23 | JavaScript Classes | [23_Class_Objects](23_Class_Objects/) | 🟡 In progress | Starter folder for JavaScript class lessons |
-| 24 | Playwright | [24_Playwright](24_Playwright/) | 🟡 In progress | Playwright Test configuration and starter browser tests for Chromium, Firefox and WebKit |
+| 20 | JavaScript Promises | [20_chapter_JS_Promise](20_chapter_JS_Promise/) | 🟡 In progress | Promise resolution and rejection, chaining, `finally()`, and `Promise.all()`, `Promise.allSettled()` and `Promise.race()` |
+| 21 | Async/Await | [21_chapter_JS_Async_Wait](21_chapter_JS_Async_Wait/) | 🟡 In progress | Async functions, sequential and parallel execution, Playwright examples and flaky-test retries |
+| 22 | ES Modules | [22_chapter_JS_Export_Import](22_chapter_JS_Export_Import/) | 🟡 In progress | Named and default exports, imports, aliases and sharing utility functions between files |
+| 23 | JavaScript Classes | [23_chapter_JS_Class_Objects](23_chapter_JS_Class_Objects/) | 🟡 In progress | JavaScript class fundamentals |
+| 24 | Playwright | [24_chapter_JS_Playwright](24_chapter_JS_Playwright/) | 🟡 In progress | Playwright Test configuration and starter browser tests for Chromium, Firefox and WebKit |
+| 25 | Class Constructors | [25_chapter_JS_Class_Object_Constructor](25_chapter_JS_Class_Object_Constructor/) | 🟡 In progress | Constructors, object instances, public/private members, static members and class-based examples |
 
 ---
 
@@ -249,24 +252,28 @@ LearnJSTSPlaywright4x/
 │   ├── 147_callback.js – 151_cb_hell.js           # Callback forms, sync/async callbacks and nesting
 │   ├── 152_Real_QA.js                             # Callback-based QA workflow example
 │   └── 153_callback_return.js – 154_pyramid_doom.js # Callback returns and nested callbacks
-├── 20_Promise/
+├── 20_chapter_JS_Promise/
 │   ├── 155_Promise.js – 157_promise_improve.js    # Creating, handling and improving Promises
 │   └── 158_PromiseAll.js – 161_IQ.js              # Promise combinators and practice
-├── 21_Async_Wait/
+├── 21_chapter_JS_Async_Wait/
 │   ├── 162_Async_Await.js – 163_Async_Await2.js   # Async functions and await
 │   ├── 164_Playwright_spec.ts – 165_Playwright_spec2.ts # Playwright test examples
 │   └── 166_Seq_Execution.js – 171_IQ3.js          # Sequential/parallel work and exercises
-├── 22_Export_Import/
+├── 22_chapter_JS_Export_Import/
 │   ├── 172_Import_Export.js – 174_log_imp.js       # ES module imports, exports and logger examples
 │   ├── utils.js, testUtils.js                      # Named exports for reusable test utilities
 │   └── logs/logger.js                              # Default and named logging exports
-├── 23_Class_Objects/
+├── 23_chapter_JS_Class_Objects/
 │   └── 175_Class.js                                # Starter file for class lessons
-├── 24_Playwright/
+├── 24_chapter_JS_Playwright/
 │   ├── playwright.config.ts                       # Chromium, Firefox and WebKit test projects
 │   └── tests/example.spec.ts                       # Starter tests against playwright.dev
+├── 25_chapter_JS_Class_Object_Constructor/
+│   └── 176_Constructir.js – 187_IQ.js              # Constructors, access, static members and class exercises
 ├── Task/
 │   ├── 12_Operators                            # Operator practice
+│   ├── 13_11_Test_Duration_Report_using class.js # Class-based duration summary
+│   ├── 13_11_Test_duration_report_using_loops.js # Loop-based duration summary from terminal input
 │   ├── 14_FizzBuzz.js, 14_GradeCalculator.js    # FizzBuzz and grade calculator
 │   ├── 14_Triangle Classifier.js                # Triangle classification
 │   ├── 21_*.js                                   # Array duplicate, frequency, max, min, reverse, sort and sum tasks
@@ -296,7 +303,7 @@ Run a lesson with `node <chapter folder>/<file>.js`. Some input lessons are inte
 
 ### Set up and run the Playwright tests
 
-The Playwright project is in `24_Playwright/`. In PowerShell, use `npm.cmd` if your execution policy blocks the `npm.ps1` script:
+The Playwright project is in `24_chapter_JS_Playwright/`. In PowerShell, use `npm.cmd` if your execution policy blocks the `npm.ps1` script:
 
 ```powershell
 cd 24_Playwright
@@ -1291,13 +1298,13 @@ Lessons: `147_callback.js` through `154_pyramid_doom.js`.
 
 ## Chapter 20: JavaScript Promises
 
-[20_Promise](20_Promise/) demonstrates creating Promises, handling resolved and rejected results, chaining and cleanup with `finally()`, and coordinating work with `Promise.all()`, `Promise.allSettled()` and `Promise.race()`.
+[20_chapter_JS_Promise](20_chapter_JS_Promise/) demonstrates creating Promises, handling resolved and rejected results, chaining and cleanup with `finally()`, and coordinating work with `Promise.all()`, `Promise.allSettled()` and `Promise.race()`.
 
 Lessons: `155_Promise.js` through `161_IQ.js`.
 
 ## Chapter 21: Async/Await
 
-[21_Async_Wait](21_Async_Wait/) covers async functions and `await`, sequential versus parallel asynchronous execution, and examples related to Playwright and flaky-test handling.
+[21_chapter_JS_Async_Wait](21_chapter_JS_Async_Wait/) covers async functions and `await`, sequential versus parallel asynchronous execution, and examples related to Playwright and flaky-test handling.
 
 Lessons: `162_Async_Await.js` through `171_IQ3.js`, including two Playwright TypeScript examples.
 
@@ -1305,19 +1312,25 @@ Lessons: `162_Async_Await.js` through `171_IQ3.js`, including two Playwright Typ
 
 ## Chapter 22: ES Modules
 
-[22_Export_Import](22_Export_Import/) demonstrates sharing values and functions between JavaScript files with named and default exports. It includes import aliases, utility modules, and a logger that combines a default `log` export with the named `logBetter` export.
+[22_chapter_JS_Export_Import](22_chapter_JS_Export_Import/) demonstrates sharing values and functions between JavaScript files with named and default exports. It includes import aliases, utility modules, and a logger that combines a default `log` export with the named `logBetter` export.
 
 Lessons: `172_Import_Export.js` through `174_log_imp.js`.
 
 ## Chapter 23: JavaScript Classes
 
-[23_Class_Objects](23_Class_Objects/) contains the `175_Class.js` starter file for class-based JavaScript lessons.
+[23_chapter_JS_Class_Objects](23_chapter_JS_Class_Objects/) contains the `175_Class.js` starter file for class-based JavaScript lessons.
 
 ## Chapter 24: Playwright
 
-[24_Playwright](24_Playwright/) contains a Playwright Test configuration with Chromium, Firefox and WebKit projects, plus starter tests that check the Playwright website title and its Get started navigation.
+[24_chapter_JS_Playwright](24_chapter_JS_Playwright/) contains a Playwright Test configuration with Chromium, Firefox and WebKit projects, plus starter tests that check the Playwright website title and its Get started navigation.
 
 Run the browser tests from the project folder with `npx playwright test` (or `npx.cmd playwright test` in PowerShell when script execution is restricted). Install browsers first with `npx playwright install`.
+
+## Chapter 25: Class Constructors
+
+[25_chapter_JS_Class_Object_Constructor](25_chapter_JS_Class_Object_Constructor/) continues the class lessons with constructors, object setup, public and private members, static properties and methods, and class-based examples.
+
+Lessons: `176_Constructir.js` through `187_IQ.js`.
 
 ---
 
@@ -1329,8 +1342,20 @@ The [`Task/`](Task/) folder contains standalone practice programs grouped by top
 - **Arrays:** `21_Duplicate_Element.js`, `21_Frequency_element_Array.js`, `21_Max_number_Array.js`, `21_Reverse_Array.js`, `21_Smallest_Ele.js`, `21_Sort_Asce.js` and `21_Sum_Array.js`.
 - **Patterns:** `2_11_Left_hand_Triangle.js`, `2_11_Right_hand_Triangle.js` and `2_11_Pyramid.js`.
 - **Strings:** `30_Count Vowels and Consonants.js`, `30_Java Anagrams.js`, `30_Palindrome Checker.js`, `30_Remove Duplicate Characters.js` and `30_String Reverse.js`.
+- **Test durations:** `13_11_Test_Duration_Report_using class.js` and `13_11_Test_duration_report_using_loops.js` calculate the total duration and identify the slowest test.
 
 Run an interactive exercise from the repository root with `node "Task/<filename>.js"`. The string lessons that read input use the installed `prompt-sync` dependency.
+
+The loop-based test-duration exercise reads a test count followed by one test name and duration (in milliseconds) per line. For example:
+
+```text
+3
+loginTest 1200
+checkoutTest 3400
+searchTest 800
+```
+
+Run it with `node "Task/13_11_Test_duration_report_using_loops.js"`, enter the lines in the terminal, then signal end-of-input with **Ctrl+Z** followed by **Enter** in Windows PowerShell. It prints the total duration and the slowest test name.
 
 The [rarely_used_methods.md](00_learning/rarely_used_methods.md) reference also covers uncommon and legacy JavaScript string methods.
 
@@ -1344,4 +1369,4 @@ The [Await_Async_Promise.md](00_learning/Await_Async_Promise.md) reference lists
 
 ## Coming Up
 
-- **Chapters 04–24** are in progress. Continue with TypeScript after the current JavaScript and Playwright lessons.
+- **Chapters 04–25** are in progress. Continue with TypeScript after the current JavaScript and Playwright lessons.
