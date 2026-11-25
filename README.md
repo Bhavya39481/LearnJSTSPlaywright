@@ -1332,6 +1332,12 @@ Run the browser tests from the project folder with `npx playwright test` (or `np
 
 Lessons: `176_Constructir.js` through `187_IQ.js`.
 
+## Chapter 35: TypeScript Abstract Classes
+
+[35_Abstract_class](35_Abstract_class/) introduces abstract classes and members. Its `BaseTest` class defines required setup, execution, teardown, and loan methods, while `UITest` implements them and inherits the concrete `loan1()` method.
+
+Lesson: `239_Absctrct_class.ts`.
+
 ---
 
 ## Practice Tasks
@@ -1369,4 +1375,4 @@ The [Await_Async_Promise.md](00_learning/Await_Async_Promise.md) reference lists
 
 ## Coming Up
 
-- **Chapters 04–25** are in progress. Continue with TypeScript after the current JavaScript and Playwright lessons.
+- **Chapters 04–25 and 35** are in progress, including the TypeScript abstract-class lesson.
